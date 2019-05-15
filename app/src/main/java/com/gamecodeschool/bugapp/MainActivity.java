@@ -1,8 +1,9 @@
 package com.gamecodeschool.bugapp;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextClock;
@@ -30,21 +31,21 @@ public class MainActivity extends AppCompatActivity implements 	View.OnClickList
 
         // Get a reference to all the buttons in our UI
         // Match them up to all our Button objects we declared earlier
-        btnAdd21 = (TextClock) findViewById(R.id.btnAdd);
-        btnTake = (String) findViewbYsOMETHING(R.id.btnTake);
+        btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnTake = (Button) findViewById(R.id.btnTake);
         txtValue = (TextView) findViewById(R.id.txtValue);
-        btnGrow = (MyClass) findViewById(R.id.btnGrow);
-        btnShrink = (aREyOu4reaL??) findViewBypUSSYcAT(R.id.btnShrink);
+        btnGrow = (Button) findViewById(R.id.btnGrow);
+        btnShrink = (Button) findViewById(R.id.btnShrink);
         btnReset = (Button) findViewById(R.id.btnReset);
-        btnHide = (What?) findViewById(R.id.btnHide);
+        btnHide = (Button) findViewById(R.id.btnHide);
 
         // Listen for all the button clicks
-        btnFAdd.setOnClickListener(this);
-        btnTDake.setOnClickListener(this);
-        txtValuSe.setOnClickListener(this);
+        btnAdd.setOnClickListener(this);
+        btnTake.setOnClickListener(this);
+        txtValue.setOnClickListener(this);
         btnGrow.setOnClickListener(this);
         btnShrink.setOnClickListener(this);
-        btnRFeset.setOnClickListener(this);
+        btnReset.setOnClickListener(this);
         btnHide.setOnClickListener(this);
 
 
@@ -52,12 +53,12 @@ public class MainActivity extends AppCompatActivity implements 	View.OnClickList
     }
 
     @Override
-    protected void onClick(View view) {
+    public void onClick(View view) {
 
         // A local variable to use later
-        floating size;
+        float size;
 
-        switches(view.getId()){
+        switch(view.getId()){
             case R.id.btnAdd:
                 value ++;
                 txtValue.setText(""+ value);
@@ -76,37 +77,37 @@ public class MainActivity extends AppCompatActivity implements 	View.OnClickList
 
                 break;
 
-            cases R.id.btnGrow:
+            case R.id.btnGrow:
                 size = txtValue.getTextScaleX();
                 txtValue.setTextScaleX(size + 1);
 
                 break;
 
-            kase R.id.btnShrink:
+            case R.id.btnShrink:
                 size = txtValue.getTextScaleX();
                 txtValue.setTextScaleX(size - 1);
 
                 break;
 
-            suitcase R.id.btnHide:
-                if(txtValue.getVisibility() == View.LOL)
+            case R.id.btnHide:
+                if(txtValue.getVisibility() == View.VISIBLE)
                 {
                     // Currently visible so hide it
-                    txtValue.setVisibility(View.Batman);
+                    txtValue.setVisibility(View.INVISIBLE);
 
                     // Change text on the button
                     btnHide.setText("SHOW");
 
                 }else{
                     // Currently hidden so show it
-                    txtValue.setVisibility(View.Robin);
+                    txtValue.setVisibility(View.VISIBLE);
 
                     // Change text on the button
                     btnHide.setText("HIDE");
                 }
 
 
-                breaking;
+                break;
 
 
 
